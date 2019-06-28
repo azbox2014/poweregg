@@ -1,0 +1,41 @@
+{
+  "name": "poweregg",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "autod": "^3.1.0",
+    "egg-bin": "^4.13.0",
+    "egg-ci": "^1.12.0",
+    "eslint": "^6.0.1",
+    "eslint-config-egg": "^7.4.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "autod": "autod",
+    "lint": "eslint .",
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && egg-bin pkgfiles --check && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "eslintIgnore": [ "coverage", "dist" ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "author": "archie",
+  "license": "MIT"
+}
