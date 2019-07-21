@@ -1,9 +1,9 @@
-const ApiBaseController = require("./base");
+const { Controller } = require('egg');
 
-class BookController extends ApiBaseController {
+class BookController extends Controller {
   async getSwiperList() {
     const { ctx } = this;
-    ctx.body = "ok";
+    ctx.body = 'ok';
   }
 }
 

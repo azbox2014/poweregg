@@ -1,6 +1,6 @@
 module.exports = app => {
   const config = {};
-  config.keys = "123456";
+  config.keys = '123456';
 
   config.mysql = {
     // database configuration
@@ -15,7 +15,7 @@ module.exports = app => {
     app: true,
     // load into agent, default false
     agent: true,
-  };  
+  };
 
   return config;
-}
+};
