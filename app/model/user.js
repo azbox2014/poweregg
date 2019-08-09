@@ -1,18 +1,20 @@
 module.exports = app => {
   const { BIGINT, STRING, TEXT, INTEGER, DATE } = app.Sequelize;
 
-  const Book = app.model.define('book', {
+  const User = app.model.define('user', {
     id: {
       type: BIGINT.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
-    title: STRING(45),
-    author: STRING(45),
-    desc: TEXT,
-    status: INTEGER.UNSIGNED,  // 1.  上架; 2. 部分下架;  3. 部分上架;   4. 下架
+    username: STRING(45),
+    nickname: STRING(45),
+    avatar: TEXT,
+    phone: STRING(20),
+    gender: INTEGER.UNSIGNED,
+    status: INTEGER.UNSIGNED,
     created_time: DATE,
     updated_titme: DATE
   });
-  return Book;
+  return User;
 };

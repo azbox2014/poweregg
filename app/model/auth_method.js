@@ -1,18 +1,18 @@
 module.exports = app => {
   const { BIGINT, STRING, TEXT, INTEGER, DATE } = app.Sequelize;
 
-  const Book = app.model.define('book', {
+  const AuthMethod = app.model.define('auth_method', {
     id: {
       type: BIGINT.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
-    title: STRING(45),
-    author: STRING(45),
-    desc: TEXT,
-    status: INTEGER.UNSIGNED,  // 1.  上架; 2. 部分下架;  3. 部分上架;   4. 下架
+    user_id: BIGINT.UNSIGNED,
+    auth_type: INTEGER.UNSIGNED,
+    auth_id: STRING,
+    auth_pwd: STRING,
     created_time: DATE,
     updated_titme: DATE
   });
-  return Book;
+  return AuthMethod;
 };

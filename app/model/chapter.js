@@ -1,17 +1,16 @@
 module.exports = app => {
-  const { BIGINT, STRING, INTEGER } = app.Sequelize;
+  const { BIGINT, STRING, TEXT, INTEGER, DATE } = app.Sequelize;
 
-  const Domain = app.model.define('domain', {
+  const Chapter = app.model.define('chapter', {
     id: {
       type: BIGINT.UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
     },
+    book_id: BIGINT.UNSIGNED,
     title: STRING(45),
-    domain: STRING(45),
-    url: STRING(45),
-    remark: STRING,
+    content: TEXT,
     order: INTEGER.UNSIGNED
   });
-  return Domain;
+  return Chapter;
 };

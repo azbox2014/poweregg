@@ -22,8 +22,7 @@ module.exports = app => {
       timestamps: false
     },
     dialectOptions: {
-      charset: 'utf8',
-      collate: 'utf8_general_ci',
+      charset: 'utf8'
     }
   };
 
