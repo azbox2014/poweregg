@@ -10,19 +10,21 @@ module.exports = app => {
     },
   };
 
-  config.mysql = {
-    // database configuration
-    client: {
-      host: '127.0.0.1',
-      port: '3306',
-      user: 'test_user',
-      password: 'test_password',
-      database: 'test',
+  config.sequelize = {
+    dialect: 'mysql',
+    connectionUri: "mysql://azbox@127.0.0.1:3306/poweregg",
+    password: "Rpi@123",
+    delegate: "model",
+    baseDir: "model",
+    define: {
+      freezeTableName: true,
+      underscored: true,
+      timestamps: false
     },
-    // load into app, default true
-    app: true,
-    // load into agent, default false
-    agent: true,
+    dialectOptions: {
+      charset: 'utf8',
+      collate: 'utf8_general_ci',
+    }
   };
 
   return config;
